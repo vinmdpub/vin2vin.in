@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#151e2b"/>
+      <stop offset="100%" stop-color="#080a0e"/>
+    </radialGradient>
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00ffff" stop-opacity="1"/>
+      <stop offset="35%" stop-color="#00d4ff" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#ffd700" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#00ffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cyanGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ffff"/>
+      <stop offset="100%" stop-color="#ffd700"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Rounded Shield -->
+  <rect width="128" height="128" rx="28" fill="url(#bgGrad)"/>
+  <rect width="126" height="126" x="1" y="1" rx="27" fill="none" stroke="url(#cyanGold)" stroke-width="1.5" stroke-opacity="0.45"/>
+
+  <!-- Radiant Core Glow -->
+  <circle cx="64" cy="64" r="26" fill="url(#coreGlow)" filter="url(#glow)"/>
+
+  <!-- Geodesic Lattice Structure -->
+  <g stroke="#00ffff" stroke-width="2" stroke-opacity="0.8" fill="none" stroke-linejoin="round">
+    <!-- Outer Hexagon -->
+    <polygon points="64,18 104,42 104,86 64,110 24,86 24,42"/>
+    <!-- Outer to Inner Connections -->
+    <line x1="64" y1="18" x2="64" y2="48"/>
+    <line x1="104" y1="42" x2="88" y2="70"/>
+    <line x1="104" y1="86" x2="88" y2="70"/>
+    <line x1="64" y1="110" x2="64" y2="80"/>
+    <line x1="24" y1="86" x2="40" y2="70"/>
+    <line x1="24" y1="42" x2="40" y2="70"/>
+    
+    <!-- Central Golden Geodesic Triangles -->
+    <polygon points="64,48 88,70 64,80" stroke="#ffd700" stroke-width="1.8" stroke-opacity="0.95"/>
+    <polygon points="64,48 40,70 64,80" stroke="#ffd700" stroke-width="1.8" stroke-opacity="0.95"/>
+    <line x1="40" y1="70" x2="88" y2="70" stroke="#ffd700" stroke-width="1.8" stroke-opacity="0.95"/>
+  </g>
+
+  <!-- Synaptic Gold & Cyan Nodes -->
+  <g fill="#ffd700">
+    <circle cx="64" cy="18" r="4.5"/>
+    <circle cx="104" cy="42" r="4.5"/>
+    <circle cx="104" cy="86" r="4.5"/>
+    <circle cx="64" cy="110" r="4.5"/>
+    <circle cx="24" cy="86" r="4.5"/>
+    <circle cx="24" cy="42" r="4.5"/>
+    
+    <!-- Inner Nodes -->
+    <circle cx="64" cy="48" r="3.8" fill="#00ffff"/>
+    <circle cx="88" cy="70" r="3.8" fill="#00ffff"/>
+    <circle cx="40" cy="70" r="3.8" fill="#00ffff"/>
+    <circle cx="64" cy="80" r="3.8" fill="#00ffff"/>
+  </g>
+
+  <!-- Central Pulse Nucleus -->
+  <circle cx="64" cy="64" r="5.5" fill="#ffffff" filter="url(#glow)"/>
+</svg>
